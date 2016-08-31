@@ -1,0 +1,386 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>迈格::在线编辑报告</title>
+<link rel="shortcut icon" href="./favicon.ico">
+<link href="./css/common.css" rel="stylesheet" />
+<link href="./css/bootstrap.css" rel="stylesheet">
+<link media="all" type="text/css" rel="stylesheet" href="./css/font-awesome.css">
+<link media="all" type="text/css" rel="stylesheet" href="./css/style.css">
+<script src="js/jquery-3.1.0.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/common.js"></script>
+<script language="JavaScript">
+<!--
+
+-->
+</script>
+<script>
+		$(function(){
+ //控制主界面/用户设置/消息/退出登录选项卡颜色的jQuery脚本
+$('#lower_banner li a').click(function(){
+        $('#lower_banner li').removeClass('active');
+        $(this).parent().addClass('active');
+ 
+   })
+ 
+})
+
+	</script>
+
+
+
+<style>
+body{
+		font-family:'微软雅黑';
+	}
+.btn-lg,
+.btn-group-lg > .btn {
+  padding: 0px 0px;
+  font-size: 18px; font-weight:bolder;
+  line-height: 1.3333333;
+  border-radius: 6px;
+  height:34px;
+}
+.btn-default {
+  color: #000000;
+  background-color: #10233c;
+  border-color: #7b7b7b;
+}
+.btn-default:focus,
+.btn-default.focus {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #8c8c8c;
+}
+.btn-default:hover {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+  color: #333;
+  background-color: #7b7b7b;
+  border-color: #adadad;
+}
+.btn-default:active:hover,
+.btn-default.active:hover,
+.open > .dropdown-toggle.btn-default:hover,
+.btn-default:active:focus,
+.btn-default.active:focus,
+.open > .dropdown-toggle.btn-default:focus,
+.btn-default:active.focus,
+.btn-default.active.focus,
+.open > .dropdown-toggle.btn-default.focus {
+  color: #333;
+  background-color: #d4d4d4;
+  border-color: #8c8c8c;
+}
+
+.btn-default .badge {
+  color: #fff;
+  background-color: #333;
+}
+.nav-pills > li {
+  float: right;
+}
+.nav-pills > li > a {
+  border-radius: 0px;
+}
+.nav-pills > li + li {
+  margin-left: 0px;
+  width:150px;
+  text-align:center;
+}
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+  font-weight:bolder;
+  color: #fff;
+  background-color: #10233c;
+}
+
+.nav {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.nav > li {
+  position: relative;
+  display: block;
+}
+.nav > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  font-weight:bolder;
+  color:#10233c;
+}
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-decoration: none;
+  background-color: #144678;
+  color:#fff;
+}
+.nav > li.disabled > a {
+  color: #fff;
+}
+.nav > li.disabled > a:hover,
+.nav > li.disabled > a:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: not-allowed;
+  background-color: transparent;
+}
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus {
+  background-color: #144678;
+  border-color: #144678;
+}
+
+.nav-pills1 > li {
+  float: right;
+}
+.nav-pills1 > li > a {
+  border-radius: 0px;
+}
+.nav-pills1 > li + li {
+  margin-left: 0px;
+  width:150px;
+  text-align:center;
+}
+.nav-pills1 > li.active > a,
+.nav-pills1 > li.active > a:hover,
+.nav-pills1 > li.active > a:focus {
+  font-weight:bolder;
+  color: #fff;
+  background-color: #10233c;
+}
+
+.nav1 {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.nav1 > li {
+  position: relative;
+  display: block;
+}
+.nav1 > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  font-weight:bolder;
+  color:gray;
+}
+.nav1 > li > a:hover,
+.nav1 > li > a:focus {
+  text-decoration: none;
+  background-color: #144678;
+  color:#fff;
+}
+.nav1 > li.disabled > a {
+  color: #fff;
+}
+.nav1 > li.disabled > a:hover,
+.nav1 > li.disabled > a:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: not-allowed;
+  background-color: transparent;
+}
+.nav1 .open > a,
+.nav1 .open > a:hover,
+.nav1 .open > a:focus {
+  background-color: #144678;
+  border-color: #144678;
+}
+.btn-file {
+ position: relative;
+ overflow: hidden;
+}
+.btn-file input[type=file] {
+ position: absolute;
+ top: 0;
+ right: 0;
+ min-width: 100%;
+ min-height: 100%;
+ font-size: 100px;
+ text-align: right;
+ filter: alpha(opacity=0);
+ opacity: 0;
+ outline: none;
+ background: white;
+ cursor: inherit;
+ display: block;
+}
+.message_header{
+
+}
+
+.message_box{
+display:none;
+}
+
+#lowercontain{background:#fff; }
+#submit_button:hover{background:green;}
+#reset_button:hover{background:red;}
+#li4:hover{background:red}
+</style>
+</head>
+<body>
+<div class="col-md-12 column" >
+
+	<!-- NAV SECTION -->
+	
+    <div class="row clearfix" align = "right" style="margin:0 0 0 0;padding:0 0 0 0;border:0 0 0 0;" >
+    <nav class="navbar">
+        <div class="container" style="padding:0px;">
+            <div class="navbar-header" style="margin-left:0%;">
+                <button type="button" class="navbar-toggle" style="border-color:#10233c;"data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar" style="background:#10233c"></span>
+                    <span class="icon-bar" style="background:#10233c"></span>
+                    <span class="icon-bar" style="background:#10233c"></span>
+                </button>
+				<a class="navbar-brand"><img style="height:40px;margin-top:10px;padding:0%;margin-left:121px;"id="linelogo" ></a>
+               <!-- <a class="navbar-brand" href="./imgs/linelogo.png">YOUR LOGO</a>-->
+            </div>
+            <div class="navbar-collapse collapse fr" style="margin-top:35px;">
+                <ul class="navv" >
+                    <li><p><a href="./index_version_3.html">迈格首页<span>Home</span></a></p></li>
+                    <li><p><a href="./about.html">关于我们<span>Abouts</span></a></p></li>
+                    <li style="width:140px;"><p><a href="./brainlabels_main.html">Brain Labels<span>Brain Labels</span></a><p></li>
+                    <li><p><a href="./news.html">新闻资讯<span>News</span></a></p></li>
+                    <li><p><a href="./career.html">加入迈格<span>Careers</span></a></p></li>
+                    <li><p><a href="./contactus.html">联系我们<span>Contact</span></a></p></li>
+					<li>&nbsp</li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+	</div>
+
+    <!--END NAV SECTION -->
+	<!-- sub NAV SECTION -->
+	<div class="row clearfix" align = "right" style="margin:0 0 0 0;padding:0 0 0 0;border:0 0 0 0;background:#10233c;" >
+		<div class="col-md-12 column">
+			<div class="col-md-2 column"></div>
+			<div class="col-md-10 column">
+				<div class="navbar" >
+        <div class="container" style="padding:0px;">
+            <div class="navbar-header" style="margin-left:0%;">
+                <button type="button" class="navbar-toggle" style="border-color:#10233c;"data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar" style="background:#10233c"></span>
+                    <span class="icon-bar" style="background:#10233c"></span>
+                    <span class="icon-bar" style="background:#10233c"></span>
+                </button>
+				<a class="navbar-brand" style="padding:0%"><img style="height:78px;padding:0%;"id="blacklogo" ></a>
+               <!-- <a class="navbar-brand" href="./imgs/linelogo.png">YOUR LOGO</a>-->
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav1 navbar-nav navbar-right" >
+                    <li><a style="color:white"href="./brainlabels_main.html">主界面</a></li>
+                    <li ><a style="color:gray" id="li2" href="./brainlabes_changepw.html">账户设置</a></li>
+                    <li ><a style="color:gray" id="li3" href="./brainlabels_message.html">消息</a></li>
+                    <li ><a id="li4" style="color:gray" href="#">退出登录</a></li>
+                </ul>
+            </div>
+
+        </div>
+		</div>	
+			</div>
+		</div>
+	</div>
+
+	 <!--END sub NAV SECTION -->
+
+	<div class="row clearfix" id="lowercontain" style="margin:0 0 0 0;padding:0 0 0 0;border:0 0 0 0"> 
+		<div class="col-md-2 column"></div>
+		<div class="col-md-8 column" style="border-color:black;border-width:1px;border-radius:3px;border-style:solid;margin-top:1%;">
+<!--在线报告编辑器-->
+			<div class="row clearfix" id="report_header" style="text-align:center;margin:0 0 0 0;padding:0 0 0 0;border:0 0 0 0"> 
+			
+			</div>
+			<div class="row clearfix" id="roi_imgs" style="text-align:center;margin:0 0 0 0;padding:0 0 0 0;border:0 0 0 0"> 
+				<div class="col-md-4 column"><img id="roi_imgs_x" src="./imgs/num123_x.jpeg"/ style="width:100%;"></div>
+				<div class="col-md-4 column"><img id="roi_imgs_y" src="./imgs/num123_x.jpeg"/ style="width:100%;"></div>
+				<div class="col-md-4 column"><img id="roi_imgs_z" src="./imgs/num123_x.jpeg"/ style="width:100%;"></div>
+			</div>
+			<br>
+			<table class="table table-bordered">
+			<caption><font size="4px" color="black" style="font-family:Microsoft YaHei;font-weight:bold;">分析结果：</font></caption>
+				<thead style="background:#f0f0f0">
+					<tr>
+						<th>Brain Structure</th>
+						<th>LH Volume(cm&sup3;)</th>
+						<th>LH Volum(% of ICV)</th>
+						<th>RH Volume(cm&sup3;)</th>
+						<th>RH Volum(% of ICV)</th>
+						<th>Asymmetry Index(%)</th>
+					</tr>
+				</thead>
+			<tbody id="patient_stat_info">
+		
+			</tbody>
+			</table>
+			<font size="4px" color="black" style="font-family:Microsoft YaHei;font-weight:bold;">文字报告栏：</font>
+			<form class="form-horizontal" role="form" name="report_feedback" action="#1.1.1.33/djashgsd" style="padding:0%;border-radius:6px;border:0px">
+                    <textarea rows="5" cols="100%" name="user_feedback" class="form-control" style="margin:0x" size="100%" height="50%" placeholder="在这里输入您的阅片诊断结果，点击“提交”按钮生成您的阅片报告"></textarea>
+					<div class="row clearfix" style="height=30%;margin-top:0%;margin-left:0%;padding:2%;text-align:left;width:100%"></div>
+					<div class="row clearfix" style="height=30%;margin-top:0%;margin-left:0%;padding:0%;text-align:left;width:100%;border-radius: 6px;">
+						<div class="col-md-3 column"></div>
+						<div class="col-md-2 column">
+						<input type="submit" id = "submit_button" class="btn btn-default btn-lg bt-block" value = "提&nbsp交" style = "color:white;width:100%;">
+						</div>
+						<div class="col-md-2 column"></div>
+						<div class="col-md-2 column">
+						<input type="reset" id = "reset_button" class="btn btn-default btn-lg bt-block" value = "重&nbsp置" style = "color:white;width:100%;">
+						</div>
+						<div class="col-md-3 column"></div>
+					</div>
+			</form>
+			<div class="row clearfix" id="report_footer" style="margin:0 0 0 0;padding:0 0 0 0;border:0 0 0 0"> 
+			
+			</div>
+			
+<script language="JavaScript">
+
+$(document).ready(function(){
+	var patient_num = '65656';
+	var patient_sex = '男';
+	var patient_age = '63';
+	var patient_note = 'AD_01';
+	var user_name = '李四';
+	var dic = ["Forebrain Parenchyma", "501.31", "30.83", "504.50","31.04","-0.63"];//字典的例子
+	$("#report_header").append("<br>病人编号："+patient_num+" 性别："+patient_sex+" 年龄："+patient_age+" 病人备注："+patient_note+".<hr style='height:1px;border:none;border-top:1px solid #000000;' /><br>");
+	$("#report_footer").append("<hr style='height:1px;border:none;border-top:1px solid #000000;' /><div class='col-md-6 column' style='text-align;left'><p>迈格生命科技(深圳)有限公司</p><p>MindsGo Life Science Shenzheng Ltd.</p></div><div class='col-md-6 column' style='text-align;right'><p style='float:right'>阅片人："+user_name+"</p></div>");
+	});
+	
+</script>
+
+		</div>
+		<div class="col-md-2 column"></div>
+	</div>
+	
+	<!--start of copyright-->	
+	<div class="w-1000 copyright" style="text-align:center;margin-top:1%;">
+		Copyright © 2015-2016    <strong><a href="http://www.mindsgo.com/" target="_blank">迈格云平台</a></strong>&nbsp;
+		<strong><a href="http://www.mindsgo.com/" target="_blank">mindsgo.com</a></strong> All Rights Reserved. 网站备案号：粤ICP备16059280号-1
+	</div>
+	<!--end of copyright-->
+</div> 
+
+
+<script type="text/javascript">
+var  img_url = "./imgs";
+document.getElementById("linelogo").src = img_url+'/linelogo_lower.png';
+document.getElementById("blacklogo").src = img_url+'/blacklogo.png';
+</script>
+
+</body>
+
+</html>

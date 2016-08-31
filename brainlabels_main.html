@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>迈格Brain Labels 1.0</title>
+
+<link rel="shortcut icon" href="./favicon.ico">
+<link href="./css/common.css" rel="stylesheet" />
+<link href="./css/bootstrap_1.css" rel="stylesheet">
+<link media="all" type="text/css" rel="stylesheet" href="./css/font-awesome.css">
+<link media="all" type="text/css" rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<script src="./js/jquery-3.1.0.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/common.js"></script>
+<script language="JavaScript">
+<!--
+//检查
+$(document).ready(function(){
+	$("#check_1").hide();
+	$("#check_2").hide();
+	$("#check_3").hide();
+	$("#check_4").hide();
+	$("#check_5").hide();
+	
+	function Check_N1(){
+		if ($("#patient_number").val()==""){
+		$("#check_1").show();
+		return false;
+		}
+		else{
+		$("#check_1").hide();
+		return true;
+		}
+	}
+	
+	function Check_N2(){
+		if ($("#patient_name").val()==""){
+		$("#check_2").show();
+		return false;
+		}
+		else{
+		$("#check_2").hide();
+		return true;
+		}
+	}
+	
+	function Check_N3(){
+		if ($("#patient_nation").val()==""){
+		$("#check_3").show();
+		return false;
+		}
+		else{
+		$("#check_3").hide();
+		return true;
+		}
+	}
+	
+	function Check_N4(){
+		if ($("#patient_age").val()==""){
+		$("#check_4").show();
+		return false;
+		}
+		else{
+		$("#check_4").hide();
+		return true;
+		}
+	}
+	//function Check_N5 用来检测文件是否上传成功
+	function Check_N5(){
+		//if ($("#patient_number").val()==""){
+		//$("#check_5").show();
+		//return false;
+		//}
+		//else{
+		//$("#check_5").hide();
+		return true;
+		//}
+	}
+	$("#submit_button_1").click(function Form_Check(){
+		if ((Check_N1())&&(Check_N2())&&(Check_N3())&&(Check_N4())&&(Check_N5())){
+			$("t1_prep").submit();
+		}
+		else{
+		return false;
+		}
+	});
+	
+});
+</script>
+
+<script language="JavaScript">
+//场景切换
+function Tool_0(){
+	document.getElementById("tools0").style.display="block";
+	document.getElementById("tools1").style.display="none";
+	document.getElementById("tools2").style.display="none";
+	document.getElementById("tools3").style.display="none";
+	document.getElementById("tools4").style.display="none";
+	document.getElementById("tools5").style.display="none";
+	document.getElementById("files0").style.display="block";
+	document.getElementById("files1").style.display="none";
+	document.getElementById("files2").style.display="none";
+	document.getElementById("files3").style.display="none";
+	document.getElementById("files4").style.display="none";
+	document.getElementById("files5").style.display="none";
+
+}
+
+function Tool_1(){
+	document.getElementById("tools1").style.display="block";
+	document.getElementById("tools2").style.display="none";
+	document.getElementById("tools3").style.display="none";
+	document.getElementById("tools4").style.display="none";
+	document.getElementById("tools5").style.display="none";
+	document.getElementById("files1").style.display="block";
+	document.getElementById("files2").style.display="none";
+	document.getElementById("files3").style.display="none";
+	document.getElementById("files4").style.display="none";
+	document.getElementById("files5").style.display="none";
+	document.getElementById("tools0").style.display="none";
+	document.getElementById("files0").style.display="none";
+}
+
+function Tool_2(){
+	document.getElementById("tools1").style.display="none";
+	document.getElementById("tools2").style.display="block";
+	document.getElementById("tools3").style.display="none";
+	document.getElementById("tools4").style.display="none";
+	document.getElementById("tools5").style.display="none";
+	document.getElementById("files1").style.display="none";
+	document.getElementById("files2").style.display="block";
+	document.getElementById("files3").style.display="none";
+	document.getElementById("files4").style.display="none";
+	document.getElementById("files5").style.display="none";
+	document.getElementById("tools0").style.display="none";
+	document.getElementById("files0").style.display="none";
+}
+
+function Tool_3(){
+	document.getElementById("tools1").style.display="none";
+	document.getElementById("tools2").style.display="none";
+	document.getElementById("tools3").style.display="block";
+	document.getElementById("tools4").style.display="none";
+	document.getElementById("tools5").style.display="none";
+	document.getElementById("files1").style.display="none";
+	document.getElementById("files2").style.display="none";
+	document.getElementById("files3").style.display="block";
+	document.getElementById("files4").style.display="none";
+	document.getElementById("files5").style.display="none";
+	document.getElementById("tools0").style.display="none";
+	document.getElementById("files0").style.display="none";
+	}
+
+function Tool_4(){
+	document.getElementById("tools1").style.display="none";
+	document.getElementById("tools2").style.display="none";
+	document.getElementById("tools3").style.display="none";
+	document.getElementById("tools4").style.display="block";
+	document.getElementById("tools5").style.display="none";
+	document.getElementById("files1").style.display="none";
+	document.getElementById("files2").style.display="none";
+	document.getElementById("files3").style.display="none";
+	document.getElementById("files4").style.display="block";
+	document.getElementById("files5").style.display="none";
+	document.getElementById("tools0").style.display="none";
+	document.getElementById("files0").style.display="none";
+	}
+
+function Tool_5(){
+	document.getElementById("tools1").style.display="none";
+	document.getElementById("tools2").style.display="none";
+	document.getElementById("tools3").style.display="none";
+	document.getElementById("tools4").style.display="none";
+	document.getElementById("tools5").style.display="block";
+	document.getElementById("files1").style.display="none";
+	document.getElementById("files2").style.display="none";
+	document.getElementById("files3").style.display="none";
+	document.getElementById("files4").style.display="none";
+	document.getElementById("files5").style.display="block";
+	document.getElementById("tools0").style.display="none";
+	document.getElementById("files0").style.display="none";
+	}
+-->
+</script>
+<script>
+		$(function(){
+ //控制主界面/用户设置/消息/退出登录选项卡颜色的jQuery脚本
+$('#lower_banner li a').click(function(){
+        $('#lower_banner li').removeClass('active');
+        $(this).parent().addClass('active');
+ 
+   })
+ 
+})
+
+	</script>
+
+
+
+<style>
+
+#lowercontain{background:#fff; }
+#submit_button:hover{background:green;}
+#reset_button:hover{background:red;}
+#li4:hover{background:red}
+#li2:hover{color:white}
+#li3:hover{color:white}
+
+body{
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	font-family:'微软雅黑';
+	width:1368px;
+}
+
+</style>
+</head>
+<body>
+<div class="col-md-12 column" >
+
+
+
+
+	
+	<!-- NAV SECTION -->
+	
+    <div class="row clearfix" align = "right" style="margin:0 0 0 0;padding:0 0 0 0;border:0 0 0 0;" >
+    <nav class="navbar">
+        <div class="container" style="padding:0px;">
+            <div class="navbar-header" style="margin-left:0%;">
+                <button type="button" class="navbar-toggle" style="border-color:#10233c;"data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar" style="background:#10233c"></span>
+                    <span class="icon-bar" style="background:#10233c"></span>
+                    <span class="icon-bar" style="background:#10233c"></span>
+                </button>
+				<a class="navbar-brand"><img style="height:40px;margin-top:10px;padding:0%;margin-left:121px;"id="linelogo" ></a>
+               <!-- <a class="navbar-brand" href="./imgs/linelogo.png">YOUR LOGO</a>-->
+            </div>
+            <div class="navbar-collapse collapse fr" style="margin-top:35px;">
+                <ul class="navv" >
+                    <li><p><a href="./index_version_3.html">迈格首页<span>Home</span></a></p></li>
+                    <li><p><a href="./about.html">关于我们<span>Abouts</span></a></p></li>
+                    <li style="width:140px;"><p><a href="./brainlabels_main.html">Brain Labels<span>Brain Labels</span></a><p></li>
+                    <li><p><a href="./news.html">新闻资讯<span>News</span></a></p></li>
+                    <li><p><a href="./career.html">加入迈格<span>Careers</span></a></p></li>
+                    <li><p><a href="./contactus.html">联系我们<span>Contact</span></a></p></li>
+					<li>&nbsp</li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+	</div>
+
+    <!--END NAV SECTION -->
+	<!-- sub NAV SECTION -->
+	<div class="row clearfix" align = "right" style="margin:0 0 0 0;padding:0 0 0 0;border:0 0 0 0;background:#10233c;" >
+		<div class="col-md-12 column">
+			<div class="col-md-2 column"></div>
+			<div class="col-md-10 column">
+				<div class="navbar" >
+        <div class="container" style="padding:0px;">
+            <div class="navbar-header" style="margin-left:0%;">
+                <button type="button" class="navbar-toggle" style="border-color:#10233c;"data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar" style="background:#10233c"></span>
+                    <span class="icon-bar" style="background:#10233c"></span>
+                    <span class="icon-bar" style="background:#10233c"></span>
+                </button>
+				<a class="navbar-brand" style="padding:0%"><img style="height:78px;padding:0%;"id="blacklogo" ></a>
+               <!-- <a class="navbar-brand" href="./imgs/linelogo.png">YOUR LOGO</a>-->
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav1 navbar-nav navbar-right" >
+                    <li><a style="color:white" href="./brainlabels_main.html">主界面</a></li>
+                    <li ><a style="color:gray" id="li2" href="./brainlabes_changepw.html">账户设置</a></li>
+                    <li ><a style="color:gray" id="li3" href="./brainlabels_message.html">消息</a></li>
+                    <li ><a id="li4" style="color:gray" href="#">退出登录</a></li>
+                </ul>
+            </div>
+
+        </div>
+		</div>	
+			</div>
+		</div>
+	</div>
+
+	 <!--END sub NAV SECTION -->
+	
+	<div class="row clearfix" id="lowercontain" style="margin:0 0 0 0;padding:0 0 0 0;border:0 0 0 0"> 
+		<!--Tool boxs-->
+		<div style="width:150px" style="padding:0%;">
+			<div class="row clearfix"></div>
+			
+			<div class="row clearfix" id="tools0" style="width:250px;display:block;background:#10233c;border-radius: 0px;padding:0%;position:absolute;top:200px;left:120px;">
+			
+					<div class="row clearfix"  style="margin:0;">
+						
+                        <input type="image"  src="./imgs/tool1.jpg" onclick="Tool_1()" style="width:100%;padding:0px;">
+						
+					</div>
+					<div class="row clearfix" style="margin:0;">
+						<input type="image" src="./imgs/tool2.jpg" onclick="Tool_2()"style="width:100%;padding:0px;">
+					</div>
+					<div class="row clearfix" style="margin:0;">
+						<input type="image" src="./imgs/tool3.jpg" onclick="Tool_3()"style="width:100%;padding:0px;">
+					</div>
+					<div class="row clearfix" style="margin:0;">
+						<input type="image" src="./imgs/tool4.jpg" onclick="Tool_4()"style="width:100%;padding:0px;">
+					</div>
+					<div class="row clearfix" style="margin:0;background:#fff;">
+						<input type="image" src="./imgs/tool5.jpg" onclick="Tool_5()"style="width:100%;padding:0px;">
+					</div>		
+			</div>
+			
+			<div class="row clearfix" id="tools1" style="width:250px;display:none;background:#10233c;border-radius: 0px;padding:0%;position:absolute;top:200px;left:120px;">
+			
+					<div class="row clearfix"  style="margin:0;">
+						
+                        <input type="image"  src="./imgs/tool1_a.jpg" onclick="Tool_1()" style="width:100%;padding:0px;">
+						
+					</div>
+					<div class="row clearfix" style="margin:0;">
+						<input type="image" src="./imgs/tool2.jpg" onclick="Tool_2()"style="width:100%;padding:0px;">
+					</div>
+					<div class="row clearfix" style="margin:0;">
+						<input type="image" src="./imgs/tool3.jpg" onclick="Tool_3()"style="width:100%;padding:0px;">
+					</div>
+					<div class="row clearfix" style="margin:0;">
+						<input type="image" src="./imgs/tool4.jpg" onclick="Tool_4()"style="width:100%;padding:0px;">
+					</div>
+					<div class="row clearfix" style="margin:0;background:#fff;">
+						<input type="image" src="./imgs/tool5.jpg" onclick="Tool_5()"style="width:100%;padding:0px;">
+					</div>		
+			</div>
+			
+			<div class="row clearfix" id="tools2" style="width:250px;display:none;background:#10233c;border-radius: 0px;padding:0%;position:absolute;top:200px;left:120px;">
+			
+					<div class="row clearfix"  style="margin:0;">
+						
+                        <input type="image"  src="./imgs/tool1.jpg" onclick="Tool_1()" style="width:100%;padding:0px;">
+						
+					</div>
+					<div class="row clearfix" style="margin:0;">
+						<input type="image" src="./imgs/tool2_a.jpg" onclick="Tool_2()"style="width:100%;padding:0px;">
+					</div>
+					<div class="row clearfix" style="margin:0;">
+						<input type="image" src="./imgs/tool3.jpg" onclick="Tool_3()"style="width:100%;padding:0px;">
+					</div>
+					<div class="row clearfix" style="margin:0;">
+						<input type="image" src="./imgs/tool4.jpg" onclick="Tool_4()"style="width:100%;padding:0px;">
+					</div>
+					<div class="row clearfix" style="margin:0;background:#fff;">
+						<input type="image" src="./imgs/tool5.jpg" onclick="Tool_5()"style="width:100%;padding:0px;">
+					</div>		
+			</div>
+			
+			<div class="row clearfix" id="tools3" style="width:250px;display:none;background:#10233c;border-radius: 0px;padding:0%;position:absolute;top:200px;left:120px;">
+			
+					<div class="row clearfix"  style="margin:0;">
+						
+                        <input type="image"  src="./imgs/tool1.jpg" onclick="Tool_1()" style="width:100%;padding:0px;">
+						
+					</div>
+					<div class="row clearfix" style="margin:0;">
+						<input type="image" src="./imgs/tool2.jpg" onclick="Tool_2()"style="width:100%;padding:0px;">
+					</div>
+					<div class="row clearfix" style="margin:0;">
+						<input type="image" src="./imgs/tool3_a.jpg" onclick="Tool_3()"style="width:100%;padding:0px;">
+					</div>
+					<div class="row clearfix" style="margin:0;">
+						<input type="image" src="./imgs/tool4.jpg" onclick="Tool_4()"style="width:100%;padding:0px;">
+					</div>
+					<div class="row clearfix" style="margin:0;background:#fff;">
+						<input type="image" src="./imgs/tool5.jpg" onclick="Tool_5()"style="width:100%;padding:0px;">
+					</div>		
+			</div>
+			
+			<div class="row clearfix" id="tools4" style="width:250px;display:none;background:#10233c;border-radius: 0px;padding:0%;position:absolute;top:200px;left:120px;">
+			
+					<div class="row clearfix"  style="margin:0;">
+						
+                        <input type="image"  src="./imgs/tool1.jpg" onclick="Tool_1()" style="width:100%;padding:0px;">
+						
+					</div>
+					<div class="row clearfix" style="margin:0;">
+						<input type="image" src="./imgs/tool2.jpg" onclick="Tool_2()"style="width:100%;padding:0px;">
+					</div>
+					<div class="row clearfix" style="margin:0;">
+						<input type="image" src="./imgs/tool3.jpg" onclick="Tool_3()"style="width:100%;padding:0px;">
+					</div>
+					<div class="row clearfix" style="margin:0;">
+						<input type="image" src="./imgs/tool4_a.jpg" onclick="Tool_4()"style="width:100%;padding:0px;">
+					</div>
+					<div class="row clearfix" style="margin:0;background:#fff;">
+						<input type="image" src="./imgs/tool5.jpg" onclick="Tool_5()"style="width:100%;padding:0px;">
+					</div>		
+			</div>
+			
+			<div class="row clearfix" id="tools5" style="width:250px;display:none;background:#10233c;border-radius: 0px;padding:0%;position:absolute;top:200px;left:120px;">
+			
+					<div class="row clearfix"  style="margin:0;">
+						
+                        <input type="image"  src="./imgs/tool1.jpg" onclick="Tool_1()" style="width:100%;padding:0px;">
+						
+					</div>
+					<div class="row clearfix" style="margin:0;">
+						<input type="image" src="./imgs/tool2.jpg" onclick="Tool_2()"style="width:100%;padding:0px;">
+					</div>
+					<div class="row clearfix" style="margin:0;">
+						<input type="image" src="./imgs/tool3.jpg" onclick="Tool_3()"style="width:100%;padding:0px;">
+					</div>
+					<div class="row clearfix" style="margin:0;">
+						<input type="image" src="./imgs/tool4.jpg" onclick="Tool_4()"style="width:100%;padding:0px;">
+					</div>
+					<div class="row clearfix" style="margin:0;background:#fff;">
+						<input type="image" src="./imgs/tool5_a.jpg" onclick="Tool_5()"style="width:100%;padding:0px;">
+					</div>		
+			</div>
+			
+			
+		</div>
+
+		<div style="width:912px;position:absolute;top:150px;right:80px;">
+<!--主界面-->
+			<div class="row clearfix" id="files0" style="display:block;background:#f0f0f0;border-radius: 6px;margin-top:5%;margin-left:10%;padding:0%">
+				<div class="row clearfix" style="margin-top:0%;margin-left:0%;padding:2%;text-align:left;width:100%;border-radius: 6px">		
+					<div  style="height:133px;border:3px;margin-top:1%;margin-left:1%;">
+					<img id="user_icon" name="user_icon" style="height:100%;"/><font size="5px" style="font-weight:bolder;"> 欢迎您,李医生</font>
+					</div>
+				<div>
+				</div>
+				</div>
+				<div class="row clearfix" style="margin-top:0%;margin-left:0%;padding:2%;text-align:left;width:100%;border-radius: 0px">		
+					<button type="button" class="btn btn-primary" style="margin-left:3%;margin-top:1%;margin-bottom:0%">您的病人数据分析任务</button><br>
+				</div>
+				<div class="row clearfix" style="border-width:1px;border-color:gray;margin-top:0%;margin-left:0%;padding:2%;text-align:left;width:100%;border-radius: 0px">		
+					<div class="col-md-4 column" id="process_detail"style="background:#fff;border:3px;margin-top:0%;margin-left:3%;"></div>
+<script>
+$(document).ready(function(){
+	var on_process = 1;
+	var after_process = 15;
+  $("#process_detail").append("<font color='gray'>处理中：</font><font color='blue'>"+on_process+"</font><font color='gray'>&nbsp&nbsp&nbsp&nbsp已完成：<font color='blue'>"+after_process+"</font>");
+});
+</script>
+		
+
+				</div>
+				<div class="row clearfix" style="border-width:1px;border-color:gray;margin-top:0%;margin-left:0%;padding:2%;text-align:left;width:100%;border-radius: 0px">		
+					<button type="button" class="btn btn-primary" style="margin-left:3%;margin-top:1%;margin-bottom:1%;"><span class="glyphicon glyphicon-ok-sign" style="font-size:20px;"></span>&nbsp最&nbsp新&nbsp报&nbsp告</button>
+					<hr color="">
+				</div>
+			</div>
+<!--个人信息-->
+			<div class="row clearfix" id="files1" style="display:none;background:#f0f0f0;border-radius: 6px;margin-top:5%;margin-left:10%;padding:0%">
+				<div class="row clearfix" style="background:#e0e0e0;margin-top:0%;margin-left:0%;padding:2%;text-align:center;width:100%;border-radius: 6px">
+					<font size="5px" style="font-weight:bolder">个&nbsp人&nbsp信&nbsp息</font>
+				</div>
+				<!--14142-->
+				<div class="row clearfix" style="background:#f0f0f0;margin:0%;padding:1%;text-align:left;width:100%">
+					<div class="col-md-1 column" style="background:#f0f0f0"> </div>
+					<div class="col-md-4 column">
+						<div class="row clearfix" style="background:#f0f0f0;margin-top:0%;margin-left:0%;padding:1%;text-align:left;width:100%">
+							<span class="glyphicon glyphicon-list-alt" style="font-size:20px;"></span><font style="font-weight:bold">&nbsp用&nbsp户&nbsp信&nbsp息</font>
+						</div>
+					</div>
+					<div class="col-md-7 column"></div>
+				</div>
+				
+				<form action="#" name="user_info" id="user_info">
+					<div class="row clearfix" style="background:#f0f0f0;margin:0%;padding:1%;text-align:left;width:100%">
+						<div class="col-md-1 column"></div>
+						<div class="col-md-4 column">
+							名&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp字<input type="text" class="form-control" name="user_firstname" id="user_firstname">
+						</div>
+						<div class="col-md-1 column"></div>
+						<div class="col-md-4 column">
+							姓&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp氏<input type="text" class="form-control" name="user_lastname" id="user_lastname">
+						</div>
+						<div class="col-md-2 column"></div>
+					</div>
+				
+					<div class="row clearfix" style="background:#f0f0f0;margin:0%;padding:1%;text-align:left;width:100%">
+						<div class="col-md-1 column"></div>
+						<div class="col-md-4 column">
+							电话号码 <input type="text" class="form-control" name="user_phonenumber" id="user_phonenumber">
+						</div>
+						<div class="col-md-1 column"></div>
+						<div class="col-md-4 column">
+							职&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp务 <input type="text" class="form-control" name="user_job" id="user_job">
+						</div>
+						<div class="col-md-2 column"></div>
+					</div>
+				
+					<div class="row clearfix" style="background:#f0f0f0;margin:0%;padding:1%;text-align:left;width:100%">
+						<div class="col-md-1 column"></div>
+						<div class="col-md-4 column">
+							工作单位 <input type="text" class="form-control" name="user_company" id="user_company">
+						</div>
+						<div class="col-md-1 column"></div>
+						<div class="col-md-4 column">
+							研究机构 <input type="text" class="form-control" name="user_institute" id="user_institute">
+						</div>
+						<div class="col-md-2 column"></div>
+					</div>
+					
+					<div class="row clearfix" style="background:#f0f0f0;margin:0%;padding:1%;text-align:left;width:100%">
+						<div class="col-md-1 column"></div>
+						<div class="col-md-4 column">
+							城&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp市 <input type="text" class="form-control" name="user_city" id="user_city">
+						</div>
+						<div class="col-md-1 column"></div>
+						<div class="col-md-4 column">
+							邮&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp编 <input type="text" class="form-control" name="user_zip" id="user_zip">
+						</div>
+						<div class="col-md-2 column"></div>
+					</div>
+					
+					<div class="row clearfix" style="background:#f0f0f0;margin:0%;padding:1%;text-align:left;width:100%">
+						<div class="col-md-1 column"></div>
+						<div class="col-md-9 column">
+							地&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp址 <input type="text" class="form-control" name="user_address" id="user_address">
+						</div>
+						<div class="col-md-2 column"></div>
+					</div>
+					
+				
+				
+				<div class="row clearfix" style="background:#f0f0f0;margin:0%;padding:1%;text-align:left;width:100%">
+					<div class="col-md-1 column" style="background:#f0f0f0"> </div>
+					<div class="col-md-4 column">
+						<div class="row clearfix" style="background:#f0f0f0;margin-top:0%;margin-left:0%;padding:1%;text-align:left;width:100%">
+							<span class="glyphicon glyphicon-list-alt" style="font-size:20px;"></span><font style="font-weight:bold">&nbsp基&nbsp金&nbsp信&nbsp息</font>
+						</div>
+					</div>
+					<div class="col-md-7 column"></div>
+				</div>
+				
+				<div class="row clearfix" style="background:#f0f0f0;margin:0%;padding:1%;text-align:left;width:100%;">
+						<div class="col-md-1 column"></div>
+						<div class="col-md-4 column">
+							科研基金名称 <input type="text" class="form-control" name="user_found" id="user_found">
+						</div>
+						<div class="col-md-1 column"></div>
+						<div class="col-md-4 column">
+							科研基金号码 <input type="text" class="form-control" name="user_found_number" id="user_found_number">
+						</div>
+						<div class="col-md-2 column"></div>
+				</div>
+				</br>
+				<div class="row clearfix" style="background:#fff;margin:0%;padding:1%;text-align:center;width:100%">
+					</br>
+					<input type="submit" id = "submit_button" class="btn btn-default btn-lg bt-block" value = "更&nbsp新&nbsp信&nbsp息" style = "color:white;width:18%;">
+				</div>
+				</form>
+			</div>
+<!--T1分割-->			
+			<div class="row clearfix" id="files2" style="display:none;background:#e0e0e0;border-radius: 6px;margin-top:5%;margin-left:10%;padding:0%">
+			<!--14241-->
+				<div class="row clearfix" style="background:#e0e0e0;margin-top:0%;margin-left:0%;padding:2%;text-align:center;width:100%;border-radius: 6px">
+					<font size="5px" style="font-weight:bolder">提&nbsp交&nbsp数&nbsp据</font>
+				</div>
+				
+				<form name="t1_prep" id="t1_prep" method="post" action="#">
+					<div class="row clearfix" style="background:#f0f0f0;margin:0%;padding:0%;text-align:left;width:100%">
+						<div class="col-md-1 column"></div>
+						<div class="col-md-6 column">
+							<div class="row clearfix" style="margin-top:0%;margin-left:0%;padding:1%;text-align:left;width:100%">
+							</br>
+							<h4 style="font-family:'黑体'">提交您的数据</h4>
+							</div>
+							<button type="button" class="btn btn-primary" style="margin:0px"><span class="glyphicon glyphicon-th-list"></span>&nbsp病&nbsp人&nbsp信&nbsp息&nbsp</button><br><br>
+							<font style="font-weight:bold;">病&nbsp历&nbsp号</font><font id="check_1" color="red">&nbsp&nbsp&nbsp请输入病历号</font><input type="text" class="form-control" name="patient_number" id="patient_number">
+							<font style="font-weight:bold;">姓&nbsp&nbsp名</font><font id="check_2" color="red">&nbsp&nbsp&nbsp请输入姓名</font><input type="text" class="form-control" name="patient_name" id="patient_name">
+							<font style="font-weight:bold;">民&nbsp&nbsp族</font><font id="check_3" color="red">&nbsp&nbsp&nbsp请输入民族</font><input type="text" class="form-control" name="patient_nation" id="patient_nation">
+							<font style="font-weight:bold;">年&nbsp&nbsp龄</font><font id="check_4" color="red">&nbsp&nbsp&nbsp请输入年龄</font><input type="text" class="form-control" name="patient_age" id="patient_age">
+							<font style="font-weight:bold;">性&nbsp&nbsp别</font>
+								<select type="text" class="form-control span7" name="patient_sex" id="patient_sex">
+								<option value="0">男</option>
+								<option value="1">女</option></select>
+							<font style="font-weight:bold;">惯&nbsp用&nbsp手</font>
+								<select type="text" class="form-control span7" name="patient_hand" id="patient_hand">
+								<option value="0">右</option>
+								<option value="1">左</option></select>							
+							<br>
+							<button type="button" class="btn btn-primary" style="margin:0px"><span class="glyphicon glyphicon glyphicon-tasks"></span>&nbsp诊&nbsp断&nbsp信&nbsp息&nbsp</button><br><br>
+							<textarea rows="4" cols="100%" name="user_feedback" class="form-control" style="background:#fff;margin:0x" size="100%" height="50%" placeholder="填写患者的早期诊断信息(选填)"></textarea>
+							<br><button type="button" class="btn btn-primary" style="margin:0px"><span class="glyphicon glyphicon glyphicon-tasks"></span>&nbsp成&nbsp像&nbsp信&nbsp息&nbsp</button><br>
+							<br><font style="font-weight:bold;">选择成像角度</font>
+							<select name="slice_type" id="slice_type" class="form-control span7">
+								<option value="1">Sagittal</option>
+								<option value="0">Axial</option>
+								<option value="2">Sagittal data converted to Axial</option>
+							</select>
+							<font style="font-weight:bold;">选择分割图谱</font>
+							<select name="atlas_name" id="atlas_name" class="form-control span7">
+								<option value="0">Adult22_50yrs_289Labels_12atlases_marcctest</option>
+								<option value="1">Adult_286labels_10atlases_mV5L</option>
+								<option value="2">Pediatric_286labels_11atlases_mV5L</option>
+								<option value="3">Adult22_50yrs_289Labels_26atlases_M2_V7A  </option>
+								<option value="4">Adult50_90yrs_289Labels_19atlases_M2_V7A  </option>
+								<option value="5">Pediatric4-8yrs_289Labels_10atlases_M2_V7A</option>
+								<option value="6">Pediatric8-12yrs_289Labels_28atlases_M2_V7A</option>
+								<option value="7">Adult22_50yrs_283Labels_26atlases_M2_V9B</option>
+								<option value="8">Adult50_90yrs_283Labels_19atlases_M2_V9B</option>
+							</select>
+							</br>
+							<p><strong>上传解析格式的图像</strong><font id="check_5" color="red">&nbsp&nbsp&nbsp请上传解析格式图像</font></p>
+							<div class="row clearfix" style="background:#f0f0f0;margin:0%;padding:0%;text-align:left;width:100%">
+								
+								<h5>您所选择的文件列表：</h5>
+								<div id="ossfile">你的浏览器不支持flash,Silverlight或者HTML5！</div>
+
+								<br/>
+
+
+								<div id="container">
+									<a id="selectfiles" href="javascript:void(0);" class='btn_up'>选择文件</a>
+									<a id="postfiles" href="javascript:void(0);" class='btn_up'>开始上传</a>
+								</div>
+
+								<pre id="console" style="background:#f0f0f0;border-width:0px;"></pre>
+
+								<p></p>
+							</div>
+						</div>
+						<div class="col-md-5 column">
+						<img src="./imgs/proccess_steps.jpg" style="folat:right;margin-top:30%;" border="0" width="100%">
+						</div>
+						
+					</div>
+					
+					<div class="row clearfix" style="background:#f0f0f0;margin:0%;padding:0%;text-align:center;width:100%">
+						<input type="button" id = "submit_button_1" class="btn btn-default btn-lg bt-block" value = "提&nbsp交"  style = "color:white;width:20%;">
+					</div>
+					<div class="row clearfix" style="background:#f0f0f0;margin:0%;padding:0%;text-align:center;width:100%"></br></div>
+				</form>
+				</div>
+				
+				
+<!--我的数据-->	
+			<div class="row clearfix" id="files3" style="display:none;background:#e0e0e0;border-radius: 6px;margin-top:5%;margin-left:10%;padding:0%;">
+				<div class="row clearfix" style="margin-top:0%;margin-left:0%;padding:2%;text-align:center;width:100%">
+					<font size="5px" style="font-weight:bolder">数&nbsp据&nbsp列&nbsp表</font>
+				</div>
+				<div class="row clearfix" style="background:#f0f0f0;margin:0px;text-align:left;">
+					<button type="button" class="btn btn-primary" style="margin-left:3%;margin-top:1%;margin-bottom:1%"><span class="glyphicon glyphicon-edit" style="font-size:20px;"></span>&nbsp处&nbsp&nbsp理&nbsp&nbsp中&nbsp</button>
+					
+					<table class="table table-hover" style="text-align:center;color:#84c1ff;">
+					<thead>
+						<tr>
+						<th style="text-align:center;color:black;">病人编号</th>
+						<th style="text-align:center;color:black;">处理日期</th>
+						<th style="text-align:center;color:black;">处理进度</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+						<td>Tanmay</td>
+						<td>Bangalore</td>
+						<td><div class="progress" style="margin-bottom:1%">
+							<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" 	style="width: 90%;">
+							</div>
+							</div>
+						</td>
+						</tr>
+						<tr>
+						<td>Sachin</td>
+						<td>Mumbai</td>
+						<td><div class="progress" style="margin-bottom:1%">
+							<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" 	style="width: 60%;">
+							</div>
+							</div></td>
+						</tr>
+						<tr>
+						<td>560001</td>
+						<td>Pune</td>
+						<td><div class="progress" style="margin-bottom:1%">
+							<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" 	style="width: 20%;">
+							</div>
+							</div></td>
+						</tr>
+					</tbody>
+					</table>
+					
+					<button type="button" class="btn btn-primary" style="margin-left:3%;margin-top:1%;margin-bottom:1%;"><span class="glyphicon glyphicon-ok-sign" style="font-size:20px;"></span>&nbsp已&nbsp&nbsp完&nbsp&nbsp成&nbsp</button>
+					
+					<table class="table table-hover" style="text-align:center;color:#84c1ff;">
+					<thead>
+						<tr>
+						<th style="text-align:center;color:black;">病人编号</th>
+						<th style="text-align:center;color:black;">处理日期</th>
+						<th style="text-align:center;color:black;">保留日期</th>
+						<th style="text-align:center;color:black;">处理结果</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+						<td>Tanmay</td>
+						<td>2016/01/17</td>
+						<td>2016/07/17</td>
+						<td>
+						<a href="#">查看报告</a>
+						&nbsp&nbsp
+						<a href="#">图像下载</a>
+						</td>
+						</tr>
+						<tr>
+						<td>Sachin</td>
+						<td>2016/01/17</td>
+						<td>2016/07/17</td>
+						<td>
+						<a href="#">查看报告</a>
+						&nbsp&nbsp
+						<a href="#">图像下载</a>
+						</td>
+						</tr>
+						<tr>
+						<td>560001</td>
+						<td>2016/01/17</td>
+						<td>2016/07/17</td>
+						<td>
+						<a href="#">查看报告</a>
+						&nbsp&nbsp
+						<a href="#">图像下载</a>
+						</td>
+						</tr>
+					</tbody>
+					</table>
+				</div>
+			</div>
+<!--用户手册-->			
+			<div class="row clearfix" id="files4" style="display:none;background:#e0e0e0;border-radius: 6px;margin-top:5%;margin-left:10%;padding:0%">
+				<div class="row clearfix" style="background:#e0e0e0;margin-top:0%;margin-left:0%;padding:2%;text-align:center;width:100%;border-radius: 6px">
+					<font size="5px" style="font-weight:bolder">用户手册</font>
+				</div>
+				<div class="row clearfix" style="background:#f0f0f0;margin:0px;">
+				这里将会用于向大家展示用户手册，并提供用户手册<a href="#">下载</a>的地址。
+				</div>
+			</div>
+<!--服务支持-->
+			<div class="row clearfix" id="files5" style="display:none;background:#e0e0e0;border-radius: 6px;margin-top:5%;margin-left:10%;padding:0%">
+				<div class="row clearfix" style="margin-top:0%;margin-left:0%;padding:2%;text-align:center;width:100%">
+					<font size="5px" style="font-weight:bolder">服&nbsp务&nbsp支&nbsp持</font>
+				</div>
+				
+				<div class="row clearfix" style="background:#f0f0f0;margin-top:0%;margin-left:0%;padding:2%;text-align:left;width:100%">
+					<font style="font-weight:bold">联系方式</font>
+				</div>
+				
+				<div class="row clearfix" style="margin-top:0%;margin-left:0%;padding:2%;text-align:left;width:100%">
+					<font>邮箱：<a href=mailto:service@mindsgo.com>&nbspservice@mindsgo.com</a></font>
+				</div>
+				
+				<div class="row clearfix" style="height=30%;background:#f0f0f0;margin-top:0%;margin-left:0%;padding:2%;text-align:left;width:100%">
+				</div>
+			
+				<div class="row clearfix" style="margin-top:0%;margin-left:0%;padding:2%;text-align:left;width:100%">
+					<font>电话：&nbsp0755 - 2660 2400</font>
+				</div>
+				
+				<div class="row clearfix" style="height=30%;background:#f0f0f0;margin-top:0%;margin-left:0%;padding:2%;text-align:left;width:100%">
+				</div>
+				
+				<div class="row clearfix" style="margin-top:0%;margin-left:0%;padding:2%;text-align:left;width:100%">
+					<font>传真：&nbsp0755 - 2660 2400</font>
+				</div>
+				
+				<div class="row clearfix" style="background:#f0f0f0;margin-top:0%;margin-left:0%;padding:2%;text-align:left;width:100%">
+					<font style="font-weight:bold">咨询留言</font>
+				</div>
+				
+				<form class="form-horizontal" role="form" name="feedback" action="#1.1.1.33/djashgsd" style="background:#f0f0f0;padding:0%;border-radius:6px;border:0px">
+                    <textarea rows="5" cols="100%" name="user_feedback" class="form-control" style="background:#e0e0e0;margin:0x" size="100%" height="50%" placeholder="请留下您的问题，我们会尽快为您解答"></textarea>
+					<div class="row clearfix" style="height=30%;background:#f0f0f0;margin-top:0%;margin-left:0%;padding:2%;text-align:left;width:100%"></div>
+					<div class="row clearfix" style="height=30%;background:#f0f0f0;margin-top:0%;margin-left:0%;padding:2%;text-align:left;width:100%;border-radius: 6px;">
+						<div class="col-md-3 column" style="background:#f0f0f0"></div>
+						<div class="col-md-2 column">
+						<input type="submit" id = "submit_button" class="btn btn-default btn-lg bt-block" value = "提&nbsp交" style = "color:white;width:100%;">
+						</div>
+						<div class="col-md-2 column"></div>
+						<div class="col-md-2 column">
+						<input type="reset" id = "reset_button" class="btn btn-default btn-lg bt-block" value = "重&nbsp置" style = "color:white;width:100%;">
+						</div>
+						<div class="col-md-3 column"></div>
+					</div>
+				</form>
+				
+				
+			</div>
+		</div>
+		
+	</div>
+	<div class="w-1000 copyright" style="text-align:center;position:absolute;top:1500px;left:300px;">
+	
+     Copyright ? 2015-2016    <strong><a href="http://www.mindsgo.com/" target="_blank">迈格云平台</a></strong>&nbsp;
+    <strong><a href="http://www.mindsgo.com/" target="_blank">mindsgo.com</a></strong> All Rights Reserved. 网站备案号：粤ICP备16059280号-1
+	</div>
+
+</div> 
+<!--
+-->
+<script type="text/javascript">
+var  img_url = "./imgs";
+document.getElementById("user_icon").src = img_url+'/user_icon.jpg';
+document.getElementById("linelogo").src = img_url+'/linelogo_lower.png';
+document.getElementById("blacklogo").src = img_url+'/blacklogo.png';
+</script>
+
+</body>
+<script type="text/javascript" src="lib/plupload-2.1.2/js/plupload.full.min.js"></script>
+<script type="text/javascript" src="upload.js?v=0.002"></script>
+
+</html>

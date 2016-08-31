@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>迈格::联系我们</title>
+<link rel="shortcut icon" href="./favicon.ico">
+<link href="./css/common.css" rel="stylesheet" />
+<link href="./css/bootstrap.css" rel="stylesheet">
+<link href="./css/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+<script src="./js/jquery-3.1.0.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/common.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+<style type="text/css">
+body{
+		font-family:'微软雅黑';
+	}
+    /* Custom Styles */
+    ul.nav-tabs{
+        width: 100%;
+        margin-top: 0px;
+        border-radius: 0px;
+        border: 0px;
+        text-align:center;
+    }
+    ul.nav-tabs li{
+        margin: 0;
+        border-top: 1px solid #ddd;
+	
+    }
+    ul.nav-tabs li:first-child{
+        border-top: none;
+    }
+    ul.nav-tabs li a{
+        margin: 0;
+        padding: 8px 16px;
+        border-radius: 0;
+    }
+    ul.nav-tabs li.active a, ul.nav-tabs li.active a:hover{
+        color: #fff;
+        background: #0088cc;
+        border: 1px solid #0088cc;
+    }
+    ul.nav-tabs li:first-child a{
+        border-radius: 0px 0px 0 0;
+    }
+    ul.nav-tabs li:last-child a{
+        border-radius: 0 0 0px 0px;
+    }
+    ul.nav-tabs.affix{
+        top: 0px; 
+		z-index:3;
+		/* Set the top position of pinned element */
+    } 
+	html,body{margin:0;padding:0;}
+    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+</style>
+
+</head>
+<body data-spy="scroll" data-target="#myScrollspy">
+<!--用container比用col-md-12留下的留白空间要大-->
+<div class="col-md-12 column" >
+   <!-- NAV SECTION -->
+	
+    <div class="row clearfix" align = "right" style="margin:0 0 0 0;padding:0 0 0 0;border:0 0 0 0;" >
+    <nav class="navbar">
+        <div class="container" style="padding:0px;">
+            <div class="navbar-header" style="margin-left:0%;">
+                <button type="button" class="navbar-toggle" style="border-color:#10233c;"data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar" style="background:#10233c"></span>
+                    <span class="icon-bar" style="background:#10233c"></span>
+                    <span class="icon-bar" style="background:#10233c"></span>
+                </button>
+				<a class="navbar-brand"><img style="height:40px;margin-top:10px;padding:0%;margin-left:121px;"id="linelogo" ></a>
+               <!-- <a class="navbar-brand" href="./imgs/linelogo.png">YOUR LOGO</a>-->
+            </div>
+            <div class="navbar-collapse collapse fr" style="margin-top:35px;">
+                <ul class="navv" >
+                    <li><p><a href="./index_version_3.html">迈格首页<span>Home</span></a></p></li>
+                    <li><p><a href="./about.html">关于我们<span>Abouts</span></a></p></li>
+                    <li style="width:140px;"><p><a href="./brainlabels_main.html">Brain Labels<span>Brain Labels</span></a><p></li>
+                    <li><p><a href="./news.html">新闻资讯<span>News</span></a></p></li>
+                    <li><p><a href="./career.html">加入迈格<span>Careers</span></a></p></li>
+                    <li><p><a href="./contactus.html">联系我们<span>Contact</span></a></p></li>
+					<li>&nbsp</li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+	</div>
+
+    <!--END NAV SECTION -->
+
+	<div class="row clearfix" >
+		<div class="col-md-1"></div>
+	<!--start of banner section-->		
+		<div class="col-md-10">
+			<img id="contactus_banner" style="width:100%;"/>
+			<div class="row clearfix" style="margin-top:3%;">
+				<div class="col-md-6" style="padding:5%">
+				<div style="width:100%;height:350px;border:#ccc solid 1px;" id="dituContent"></div>
+				</div>
+				<div class="col-md-6" style="padding:5%;margin-top:2%;">
+				<h3 style="font-family:'微软雅黑';color:#10233c;">迈格生命科技(深圳)有限公司</h3>
+				<p>公司电话： +86-755-26602400</p>
+				<p>公司传真： +86-755-26602400</p>
+				<p>客户服务邮箱： service@mindsgo.com</p>
+				<p>公司地址： 广州省深圳市南山区丽山路大学城创业园</p>
+				</div>
+			</div>
+		</div>
+	<!--end of banner section-->		
+		<div class="col-md-1"></div>
+	</div>
+
+	
+
+	<!--start of copyright-->	
+		<br>
+	<br>
+	<hr>
+	<div class="w-1000 copyright" style="text-align:center;margin-top:1%;">
+		Copyright © 2015-2016    <strong><a href="http://www.mindsgo.com/" target="_blank">迈格云平台</a></strong>&nbsp;
+		<strong><a href="http://www.mindsgo.com/" target="_blank">mindsgo.com</a></strong> All Rights Reserved. 网站备案号：粤ICP备16059280号-1
+	</div>
+	<!--end of copyright-->
+</div>
+</body>
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
+    }
+    
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(113.972424,22.594641);//定义一个中心点坐标
+        map.centerAndZoom(point,18);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+    
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+    
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+	var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+	map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+	var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+	map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+	var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+	map.addControl(ctrl_sca);
+    }
+    
+    //标注点数组
+    var markerArr = [{title:"迈格生命科技(深圳)有限公司",content:"广东省深圳市南山区大学城创业园1905",point:"113.972123|22.595041",isOpen:1,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+		 ];
+    //创建marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+			var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+			var iw = createInfoWindow(i);
+			var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+			marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                        borderColor:"#808080",
+                        color:"#333",
+                        cursor:"pointer"
+            });
+			
+			(function(){
+				var index = i;
+				var _iw = createInfoWindow(i);
+				var _marker = marker;
+				_marker.addEventListener("click",function(){
+				    this.openInfoWindow(_iw);
+			    });
+			    _iw.addEventListener("open",function(){
+				    _marker.getLabel().hide();
+			    })
+			    _iw.addEventListener("close",function(){
+				    _marker.getLabel().show();
+			    })
+				label.addEventListener("click",function(){
+				    _marker.openInfoWindow(_iw);
+			    })
+				if(!!json.isOpen){
+					label.hide();
+					_marker.openInfoWindow(_iw);
+				}
+			})()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+    
+    initMap();//创建和初始化地图
+</script>
+<script type="text/javascript">
+var  img_url = "./imgs";
+document.getElementById("linelogo").src = img_url+'/linelogo_lower.png';
+document.getElementById("contactus_banner").src=img_url+"/contactus_banner.jpg"; 
+
+
+
+</script>
+
+<!--document.getElementById("function_1").src=img_url+"/block1.jpg";
+document.getElementById("function_2").src=img_url+"/block2.png";
+document.getElementById("function_3").src=img_url+"/block3.jpg";
+document.getElementById("slide1").src=img_url+"/医学研究.jpg";
+document.getElementById("slide2").src=img_url+"/医疗诊断.jpg";
+document.getElementById("slide3").src=img_url+"/医学教育.jpg";
+document.getElementById("slide4").src=img_url+"/高端体检.jpg";
+document.getElementById("slide1_sub").src=img_url+"/slide1_sub.jpg";
+document.getElementById("slide2_sub").src=img_url+"/slide2_sub.jpg";
+document.getElementById("slide3_sub").src=img_url+"/slide3_sub.jpg";
+document.getElementById("slide4_sub").src=img_url+"/slide4_sub.jpg";
+document.getElementById("footer1").src=img_url+"/footer1.png";
+document.getElementById("footer2").src=img_url+"/footer2.png";
+document.getElementById("footer3").src=img_url+"/footer3.png";
+document.getElementById("footer4").src=img_url+"/footer4.png"; -->
+</html>  
